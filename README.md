@@ -58,9 +58,13 @@
  "tsx": "^4.19.2" (Utilitário para executar arquivos TypeScript diretamente com suporte para JSX, usado em projetos com React.)
 
  Frontend: 
+
  "react": "^18.3.1",
+
  "react-dom": "^18.3.1",
+
  "react-router-dom": "^7.0.1"
+ 
  !Estas já são dependências automaticas quando se inicializa um projeto com react vite.! 
 
 # Pré-Requisitos
