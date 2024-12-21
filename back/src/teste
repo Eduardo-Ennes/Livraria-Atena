@@ -1,0 +1,1 @@
+"include": ["src/**/*.ts", "src/server.ts", "src/controller/User.ts", "src/controller/Products.ts", "src/methods/validationCnpj.js"],

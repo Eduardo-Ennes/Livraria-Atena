@@ -1,0 +1,98 @@
+.createpro-position{
+    background-color: rgba(255, 255, 255, 0.89);
+    height: 50rem;
+    margin: 1rem auto 0 auto;
+    border-radius: 1rem;
+    border: 1px solid black;
+}
+
+.div-createpro-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.createpro-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.createpro-form select{
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    width: 15rem;
+}
+
+.div-createpro-position{
+    height: 40rem;
+    width: 55rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.div-createpro-position input{
+    border: 1px solid rgba(0, 0, 0, 0.363);
+}
+
+.div-createpro-select{
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    justify-content: space-evenly;
+}
+
+.div-createpro-position-textarea{
+    height: 40rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.div-createpro-position-textarea textarea{
+    width: 95%;
+    height: 20rem;
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+
+.CreateProduct-err{
+    background-color: rgba(255, 0, 0, 0.521);
+    height: 5rem;
+    width: 90%;
+    padding: 0.5rem;
+    font-size: 1.8rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.CreateProduct-err-white{
+    background-color: rgba(255, 255, 255, 0.89);
+    height: 5rem;
+    width: 90%;
+    padding: 0.5rem;
+    font-size: 1.8rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.Createproduct-contein-buttons{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.ButtonDelete{
+    padding: 1rem;
+    background-color: rgba(255, 0, 0, 0.76);
+    color: white;
+}
+
+.ButtonAdd{
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.822);
+    color: white;
+}

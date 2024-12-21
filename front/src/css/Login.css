@@ -1,0 +1,84 @@
+.div-father{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.position{
+    background-color: rgba(255, 255, 255, 0.89);
+    padding: 1rem;
+    height: 45rem;
+    width: 50rem;
+    margin-bottom: 13rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.425);
+}
+
+form{
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+form h3{
+    font-size: 3rem;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+input{
+    width: 90%;
+    border-radius: 1.5rem;
+    border: none;
+    padding: 1rem;
+    border: 1px solid rgba(0, 0, 0, 0.363);
+}
+
+.error{
+    background-color: rgba(255, 0, 0, 0.521);
+    height: 5rem;
+    width: 90%;
+    padding: 0.5rem;
+    font-size: 1.8rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.error-white{
+    background-color: rgba(255, 255, 255, 0.89);
+    height: 5rem;
+    width: 90%;
+    padding: 0.5rem;
+    font-size: 1.8rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+/* Este button que reje todos os tamanhos dos outros buttons*/
+button{
+    width: 15rem;
+    padding: 0.5rem; /* Esta interligado com o InfoProduct*/
+}
+
+.Login-Button{
+    background-color: rgba(0, 0, 0, 0.822);
+    color: white;
+    padding: 1rem;
+}
+
+button:hover{
+    cursor: pointer;
+}
+
+.cadastrar-se{
+    width: 90%;
+    margin: auto;
+    font-size: 1.8rem;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    font-weight: bold;
+}

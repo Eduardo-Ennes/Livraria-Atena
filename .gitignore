@@ -1,0 +1,72 @@
+# Geral
+.DS_Store
+Thumbs.db
+*.log
+*.env
+node_modules/
+dist/
+build/
+coverage/
+.vscode/
+.idea/
+*.swp
+*.iml
+*.bak
+*.tmp
+*.lock
+
+# Backend (Pasta "back")
+back/.env
+back/node_modules/
+back/logs/
+back/uploads/
+back/temp/
+back/*.pem
+
+# Frontend (Pasta "front")
+front/.env
+front/node_modules/
+front/build/
+front/.cache/
+front/public/assets/
+front/public/*.cache
+
+# Sistemas Operacionais
+# macOS
+*.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.nfs*
+
+# Configurações de Testes e CI/CD
+jest.config.js
+test-results.xml
+/coverage/
+
+# Outras Ferramentas
+# npm ou yarn
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# IDEs e Editores
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.log
+
+# Logs e Depuração
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*

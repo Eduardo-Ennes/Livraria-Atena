@@ -1,0 +1,66 @@
+.UpdateSeller-position{
+    background-color: rgba(255, 255, 255, 0.89);
+    padding: 1rem;
+    border-radius: 1rem;
+    width: 100rem;
+    margin: 0.5rem auto 2rem auto;
+    border: 1px solid black;
+}
+
+.UpdateSeller-flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.UpdateSeller-conetin-inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.UpdateSeller-conetin-inputs input{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 50rem;
+}
+
+.div-contein-info-3{
+    width: 40rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 5rem;
+}
+
+.UpdateSeller-err-white{
+    background-color: rgba(255, 255, 255, 0.89);
+    height: 15rem;
+    width: 90%;
+    padding: 0.5rem;
+    font-size: 1.8rem;
+    border-radius: 1rem;
+    text-align: center;
+    border: 1px solid rgba(0, 0, 0, 0.411);
+}
+
+.UpdateSeller-contein-buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.UpdateSeller-buttonAdd{
+    padding: 1rem;
+    background-color: rgba(0, 0, 0, 0.822);
+    color: white;
+}
+
+.UpdateSeller-buttonDel{
+    padding: 1rem;
+    background-color: rgba(255, 0, 0, 0.76);
+    color: white;
+}

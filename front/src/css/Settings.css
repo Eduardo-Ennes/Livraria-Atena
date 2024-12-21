@@ -1,0 +1,39 @@
+.settings-back{
+    display: grid;
+    grid-template-columns: 22rem 113.8rem;
+    height: 100vh;
+}
+
+.settings{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    overflow: auto;
+    padding: 0.5rem;
+}
+
+.settings-container{
+    padding: 1rem;
+    background-color: rgba(21, 33, 104, 0.651);
+    overflow-x: hidden;
+}
+
+.settings-topics{
+    display: flex;
+    flex-direction: column;
+}
+
+.settings-topics li{
+    font-size: 1.8rem;
+    text-align: left;
+    width: 85%;
+    color: white;
+    padding: 0.5rem;
+    transition: padding-left 0.5s;
+    border-radius: 1rem;
+}
+
+.settings-topics li:hover{
+    padding-left: 2rem;
+    outline: 0.5px solid rgba(255, 255, 255, 0.356);
+}

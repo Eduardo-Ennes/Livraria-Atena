@@ -1,0 +1,40 @@
+.createUser-position {
+    background-color: rgba(255, 255, 255, 0.89);
+    width: 45%;
+    margin: 2rem auto 0 auto;
+    height: 55rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: 1rem;
+}
+
+.createUser-form input{
+    border: 1px solid rgba(0, 0, 0, 0.363);
+}
+
+.CreateUser-err{
+    background-color: rgba(255, 0, 0, 0.521);
+    height: 5rem;
+    width: 90%;
+    padding: 0.5rem;
+    font-size: 1.8rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.CreateUser-err-white{
+    background-color: rgba(255, 255, 255, 0.89);
+    height: 5rem;
+    width: 90%;
+    padding: 0.5rem;
+    font-size: 1.8rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.CreateUser-Button{
+    background-color: rgba(0, 0, 0, 0.822);
+    color: white;
+    padding: 1rem;
+}

@@ -1,0 +1,38 @@
+.CrateSeller-position{
+    background-color: rgba(255, 255, 255, 0.89);
+    width: 45rem;
+    height: 50rem;
+    margin: 3rem auto 0 auto;
+    border-radius: 1rem;
+    border: 1px solid black;
+}
+
+.CreateSeller-form input{
+    border: 1px solid rgba(0, 0, 0, 0.363);
+}
+
+.CreateSeller-form button{
+    background-color: rgba(0, 0, 0, 0.822);
+    color: white;
+    padding: 1rem;
+}
+
+.CreateSeller-err{
+    background-color: rgba(255, 0, 0, 0.521);
+    height: 5rem;
+    width: 90%;
+    padding: 0.5rem;
+    font-size: 1.8rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.CreateSeller-err-white{
+    background-color: rgba(255, 255, 255, 0.89);
+    height: 5rem;
+    width: 90%;
+    padding: 0.5rem;
+    font-size: 1.8rem;
+    border-radius: 1rem;
+    text-align: center;
+}

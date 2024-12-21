@@ -1,0 +1,48 @@
+.createaddress-position{
+    background-color: rgba(255, 255, 255, 0.89);
+    margin: 2rem auto 0 auto;
+    height: 50rem;
+    width: 50rem;
+    border-radius: 1rem;
+    border: 1px solid black;
+}
+
+.createaddress-form input{
+    border: 1px solid rgba(0, 0, 0, 0.363);
+}
+
+.createaddress-err{
+    background-color: rgba(255, 0, 0, 0.521);
+    height: 5rem;
+    width: 90%;
+    padding: 0.5rem;
+    font-size: 1.8rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.createaddress-err-green{
+    background-color: rgb(2, 240, 2);
+    height: 5rem;
+    width: 90%;
+    padding: 0.5rem;
+    font-size: 1.8rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.createaddress-err-white{
+    background-color: rgba(255, 255, 255, 0.89);
+    height: 5rem;
+    width: 90%;
+    padding: 0.5rem;
+    font-size: 1.8rem;
+    border-radius: 1rem;
+    text-align: center;
+}
+
+.createaddress-position button{
+    background-color: rgba(0, 0, 0, 0.822);
+    color: white;
+    padding: 1rem;
+}
