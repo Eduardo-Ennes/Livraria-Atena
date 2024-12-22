@@ -251,3 +251,13 @@
 
 # Licença
  Este projeto é disponibilizado exclusivamente para fins educativos. Você pode utilizá-lo para aprendizado, estudar as tecnologias implementadas e até mesmo como base para seus próprios projetos.
+
+# Considerações Finais 
+ Como eu mencionei na introdução do projeto, estou buscando desenvolvedores que estejam iniciando sua jornada na programação e que estejam interessados a colaborar com este projeto para incorpora-lo e trazer novas ideias e desencolvimento. 
+
+ Requisitos minimos para participar deste projeto é ter pelo menos conhecimento de um deste: 
+ 
+ - backend: node.js e typescript 
+ - frontend: html5 e css3 e react 
+
+ interessados entrar em contato pelo linkedin: www.linkedin.com/in/eduardo-ennes-537070186
