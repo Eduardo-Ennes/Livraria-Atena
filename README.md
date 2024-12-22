@@ -17,6 +17,7 @@
 
 # Tecnologias e Versões Utilizadas
  Backend:
+
  "@types/express": "^4.17.17" (Tipagens TypeScript para o framework Express, proporcionando autocompletar e verificação de tipos), <br>
  "@types/jsonwebtoken": "^9.0.7" (Tipagens TypeScript para a biblioteca jsonwebtoken, usada para criar e verificar tokens JWT),<br>
  "bcryptjs": "^2.4.3" (Biblioteca para criptografia de senhas. Usada para criar hashes de senhas de forma segura),<br>
@@ -39,7 +40,7 @@
  "tsx": "^4.19.2" (Utilitário para executar arquivos TypeScript diretamente com suporte para JSX, usado em projetos com React.)
 
  Frontend: 
- 
+
  "react": "^18.3.1",<br>
  "react-dom": "^18.3.1",<br>
  "react-router-dom": "^7.0.1"<br
@@ -54,29 +55,31 @@
 
 # Estrutura do banco de dados
  users: 
- id_user int primary_key auto_increment, 
- first_name varchar(45), 
- last_name varchar(45), 
- email varchar(75), 
- password varchar(100), 
- role int, 
- create_at CURRENT_TIMESTAMP, 
- update_at CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+ id_user int primary_key auto_increment, <br>
+ first_name varchar(45), <br>
+ last_name varchar(45), <br>
+ email varchar(75), <br>
+ password varchar(100), <br>
+ role int, <br>
+ create_at CURRENT_TIMESTAMP, <br>
+ update_at CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,<br>
 
  products: 
- id_product int primary_key auto_increment, 
- image varchar(100), 
- name varchar(55), 
- description text, 
- price decimal(10,2), 
- quantity int, 
- activate tinyint, 
- category tinyint, 
- promotion tinyint, 
- price_promotion decimal(10,2), 
- create_at CURRENT_TIMESTAMP, 
- update_at CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 
- own int foreign_key reference: id_user
+
+ id_product int primary_key auto_increment, <br>
+ image varchar(100), <br>
+ name varchar(55), <br>
+ description text, <br>
+ price decimal(10,2), <br>
+ quantity int, <br>
+ activate tinyint, <br>
+ category tinyint, <br>
+ promotion tinyint, <br>
+ price_promotion decimal(10,2), <br>
+ create_at CURRENT_TIMESTAMP, <br>
+ update_at CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, <br>
+ own int foreign_key reference: id_user 
 
  breve explicação dos campos activate, category e own. 
  
@@ -87,15 +90,16 @@
  o campo own é uma foreign key que se relaciona com o id_user, para relacionar um usuário a um livro. Seria uma relação para demarcar o proprietário deste livro.
 
  address: 
- id int primary_key auto_increment, 
- state varchar(18), 
- city varchar(45), 
- neighborhood varchar(45), 
- street varchar(75), 
- number int, 
- complement text, 
- creat_at CURRENT_TIMESTAMP, 
- update_at CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 
+
+ id int primary_key auto_increment, <br>
+ state varchar(18), <br>
+ city varchar(45), <br>
+ neighborhood varchar(45), <br>
+ street varchar(75), <br>
+ number int, <br>
+ complement text, <br>
+ creat_at CURRENT_TIMESTAMP, <br>
+ update_at CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, <br>
  own int foreign_key reference: id_user
 
  breve explicação do campo own.
@@ -103,15 +107,16 @@
  o campo own é uma foreign key que se relaciona com o id_user, para relacionar um usuário a um endereço. Seria uma relação para demarcar o proprietário deste endereço.
 
  seller: 
- id_seller int primary_key auto_increment, 
- cnpj varchar(18), 
- state varchar(18), 
- city varchar(45), 
- street varchar(75), 
- number varchar(10), 
- phone varchar(14), 
- create_at CURRENT_TIMESTAMP, 
- update_at CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 
+
+ id_seller int primary_key auto_increment, <br>
+ cnpj varchar(18), <br>
+ state varchar(18), <br>
+ city varchar(45), <br>
+ street varchar(75), <br>
+ number varchar(10), <br>
+ phone varchar(14), <br>
+ create_at CURRENT_TIMESTAMP, <br>
+ update_at CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, <br>
  own int foreign_key reference: id_user
 
  breve explicação do campo own.
