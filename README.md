@@ -253,16 +253,16 @@
  configure o backend:
  cd back 
  npm install 
- npm run dev (para rodar a aplicação)
- (Não é necessário nenhuma versão especifica)
+ npm run dev 
+ // Não é necessário nenhuma versão especifica
 ```
 
 ```javascript
  configure o frontend: 
  cd front 
  npm install 
- npm run dev (para rodar a aplicação) 
- (Não é necessário nenhuma versão especifica)
+ npm run dev 
+ // Não é necessário nenhuma versão especifica
 ```
 
 # Licença
