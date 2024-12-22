@@ -26,6 +26,7 @@ app.use(express.json())
 // Configuração de CORS
 app.use(cors())
 
+// Url para exibir imagens no frontend
 const uploadsDir = path.join(__dirname, 'uploads');
 app.use('/uploads', express.static(uploadsDir));
 

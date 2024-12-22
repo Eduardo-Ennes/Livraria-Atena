@@ -2,7 +2,6 @@ import { createClient } from 'redis'
 import dotenv from 'dotenv'
 dotenv.config()
 
-// Configuração do Redis
 const client = createClient({
     url: process.env.REDIS_URL  // Conectando ao Redis local no Windows
   });

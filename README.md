@@ -4,7 +4,7 @@
  Este é o meu primeiro projeto na minha jornada como desenvolvedor. Até agora, a Livraria Atena foi desenvolvida exclusivamente por mim, mas tenho o objetivo de integrar outro participante que também esteja iniciando sua jornada, visando uma troca de conhecimento mais rica e colaboração no projeto.  
 
 # Funcionalidades
- - criação e login de usuários.
+ - criação,login e logout de usuários.
  - criação e atualização de endereço de entrega.
  - criação, deleção e atualização de perfil para publicar livros.
  - criação, deleção e atualização para endereço de perfil de vendedor.
@@ -64,7 +64,206 @@
  "react-dom": "^18.3.1",
 
  "react-router-dom": "^7.0.1"
- 
+
  !Estas já são dependências automaticas quando se inicializa um projeto com react vite.! 
 
-# Pré-Requisitos
+# Pré-Requisitos 
+ - Node.js
+ - MySql
+ - Redis
+ - React
+
+# Estrutura do banco de dados
+ users: 
+ id_user int primary_key auto_increment, 
+ first_name varchar(45), 
+ last_name varchar(45), 
+ email varchar(75), 
+ password varchar(100), 
+ role int, 
+ create_at CURRENT_TIMESTAMP, 
+ update_at CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+
+ products: 
+ id_product int primary_key auto_increment, 
+ image varchar(100), 
+ name varchar(55), 
+ description text, 
+ price decimal(10,2), 
+ quantity int, 
+ activate tinyint, 
+ category tinyint, 
+ promotion tinyint, 
+ price_promotion decimal(10,2), 
+ create_at CURRENT_TIMESTAMP, 
+ update_at CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 
+ own int foreign_key reference: id_user
+
+ breve explicação dos campos activate, category e own. 
+ 
+ O campo activate será preenchido com os números 0 ou 1, 0 para produto existente, porém, não está disponível no momento e 1 para produto publicado e disponível.
+
+ O campo category será preenchido por números que corresponderam a uma categoria, exemplo usado neste projeto: 1 = ficção, 2 = história e 3 = auto-ajuda
+
+ o campo own é uma foreign key que se relaciona com o id_user, para relacionar um usuário a um livro. Seria uma relação para demarcar o proprietário deste livro.
+
+ address: 
+ id int primary_key auto_increment, 
+ state varchar(18), 
+ city varchar(45), 
+ neighborhood varchar(45), 
+ street varchar(75), 
+ number int, 
+ complement text, 
+ creat_at CURRENT_TIMESTAMP, 
+ update_at CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 
+ own int foreign_key reference: id_user
+
+ breve explicação do campo own.
+
+ o campo own é uma foreign key que se relaciona com o id_user, para relacionar um usuário a um endereço. Seria uma relação para demarcar o proprietário deste endereço.
+
+ seller: 
+ id_seller int primary_key auto_increment, 
+ cnpj varchar(18), 
+ state varchar(18), 
+ city varchar(45), 
+ street varchar(75), 
+ number varchar(10), 
+ phone varchar(14), 
+ create_at CURRENT_TIMESTAMP, 
+ update_at CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 
+ own int foreign_key reference: id_user
+
+ breve explicação do campo own.
+
+ o campo own é uma foreign key que se relaciona com o id_user, para relacionar um usuário a um perfil de vendedor. Seria uma relação para demarcar o proprietário deste perfil de vendedor.
+
+# Configurações MySql
+ Livraria-Atena/back/src/database/connection.ts
+
+ ```javascript
+ import knex from 'knex';
+
+ const db = knex({
+   client: 'mysql2',
+   connection: {
+   host: '127.0.0.1',
+   port: 3306,
+   user: 'NomeDoUsuário',
+   password: 'Senha',
+   database: 'NomeDoBancoDeDados',
+   },
+ });
+
+ export default db;
+ ```
+
+# Configurações Redis
+ Criação de um arquivo .env na pasta Livraria-Atena/back e insira: 
+ ```env
+ REDIS_URL=redis://:Livraria-Atena@127.0.0.1:6379
+ ```
+
+ Livraria-Atena/back/src/redis/redisClient.ts
+
+ ```javascript
+ import { createClient } from 'redis'
+ import dotenv from 'dotenv'
+ dotenv.config()
+
+ const client = createClient({
+    url: process.env.REDIS_URL
+ });
+  
+ client.on('error', (err) => {
+    console.error('Erro de conexão com o Redis:', err);
+ });
+
+ export default client;
+ ```
+
+# Configurações server.ts
+ O arquivo serve.ts é o nosso arquivo principal onde se inicializa aplicação. Encontrado no caminho Livraria-Atena/back/server.ts
+
+ segue as configurações e suas explicações abaixo:
+
+```javascript
+ import express from 'express'
+ import cors from 'cors'
+ import router from './routes/http'
+ import 'reflect-metadata'
+ import client from './redis/redisClient'
+ import path from 'path'
+// import db from '../database/Connection' 
+
+ const app = express()
+
+// Middleware para permitir JSON e dados de formulários
+ app.use(express.urlencoded({ extended: false }))
+ app.use(express.json())
+
+// Teste de conexão com o banco de dados
+// db.raw('SELECT 1')
+//   .then(() => {
+//     console.log('Conexão bem-sucedida ao MySQL!');
+//     db.destroy();  // Fecha a conexão após o teste
+//   })
+//   .catch((err) => {
+//     console.error('Erro ao conectar ao MySQL:', err.message);
+//     db.destroy();  // Fecha a conexão em caso de erro
+//     });
+
+// Configuração de CORS
+ app.use(cors())
+
+// Url para exibir imagens no frontend
+ const uploadsDir = path.join(__dirname, 'uploads');
+ app.use('/uploads', express.static(uploadsDir));
+
+// Rotas
+ app.use(router)
+
+// Estou inicializando o projeto desta forma, por que se o redis apresentar algum tipo de problema a aplicação não se inicia e o erro do redis é mostrado no terminal.
+ const startServer = async () => {
+    try{
+        // Conecta o redis
+        if (!client.isOpen) {
+            await client.connect();
+            console.log('Conectado ao Redis');
+        } else {
+            console.log('Redis já está conectado.');
+        }
+        
+        // Inicializa a aplicação
+        app.listen(8080, () => {
+            console.log('Servidor inicializado na porta 8080.')
+        })
+
+    }catch(err){
+        console.log('Inicialização do servidor: ' + err)
+    }
+ }
+
+ startServer()
+ ``` 
+
+# Como executar
+```javascript
+ configure o backend:
+ cd back 
+ npm install 
+ npm run dev (para rodar a aplicação)
+ (Não é necessário nenhuma versão especifica)
+```
+
+```javascript
+ configure o frontend: 
+ cd front 
+ npm install 
+ npm run dev (para rodar a aplicação) 
+ (Não é necessário nenhuma versão especifica)
+```
+
+# Licença
+ Este projeto é disponibilizado exclusivamente para fins educativos. Você pode utilizá-lo para aprendizado, estudar as tecnologias implementadas e até mesmo como base para seus próprios projetos.
