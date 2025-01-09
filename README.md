@@ -1,5 +1,5 @@
 # Livraria-Atena
- A ideia deste projeto surgiu a partir de dois pilares: minha paixão por leitura e a realidade educacional carente na minha cidade. A Livraria Atena é um e-commerce de venda de livros, e atualmente está sendo utilizada como portfólio. No entanto, novas ideias estão surgindo para torná-la ainda mais robusta e funcional, ou quem sabe, um dia, transformá-la em uma realidade.
+ A ideia deste projeto surgiu a partir de um pilar: minha paixão por leitura. A Livraria Atena é um e-commerce de venda de livros, apenas utilizado para fins educacionais e de portifólio. No entanto, novas ideias estão surgindo para torná-la ainda mais robusta e funcional.
 
  Este é o meu primeiro projeto na minha jornada como desenvolvedor. Até agora, a Livraria Atena foi desenvolvida exclusivamente por mim, mas tenho o objetivo de integrar outro participante que também esteja iniciando sua jornada, visando uma troca de conhecimento mais rica e colaboração no projeto.  
 
